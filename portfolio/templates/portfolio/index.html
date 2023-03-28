@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "portfolio/fonts/Gilroy/Gilroy.css" %}">
+    <link rel="stylesheet" href="{% static "portfolio/styles.css" %}">
+</head>
+
+<body class="d-flex flex-column align-items-center">
+<div class="container-fluid p-0">
+    <div class="mt-5 mt-md-3 row container-fluid flex-row-reverse block mx-auto">
+        <nav class="navbar navbar-light navbar-expand-md align-self-start col-auto col-md-12 pt-4">
+            <div class="container-fluid p-0">
+                <button class="navbar-toggler px-1" data-bs-toggle="offcanvas" id="navbar-toggler"
+                        data-bs-target="#offcanvas-navbar"
+                        style="/*background-color: var(--bs-navbar-toggler-focus-width);*//*background: rgba(150,150,150,0.2);*/">
+                    <span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end pt-5 pt-md-0" tabindex="-1" id="offcanvas-navbar">
+                    <div class="justify-content-between align-items-start container-fluid d-flex p-0">
+                        <div class="offcanvas-body container-fluid pt-0">
+                            <ul class="navbar-nav flex-fill justify-content-between">
+                                <li class="nav-item"><a class="nav-link active" href="#"
+                                                        style="padding-left: 0;">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#about-me">About me</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#contacts" style="padding-right: 0;">Contacts</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex-column d -flex offcanvas-header">
+                            <button class="btn-close offcanvas-close-button" type="button" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            <div class="offcanvas-language-links-container" tabindex="-1">
+                                <div class="align-items-baseline d-flex" id="language-links"><a class="nav-link p-0"
+                                                                                                href="#">RU</a>
+                                    <p class="nav-link-separator">|</p><a class="nav-link active p-0" href="#">ENG</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-md-block d-none nav-border"></div>
+                </div>
+            </div>
+        </nav>
+        <div class="col d-flex flex-column flex-md-row p-0">
+            <h1 class="col-auto px-0 pt-4">Denis <br>Novik</h1>
+            <div class="col d-flex align-items-end justify-content-md-center mt-2 p-0">
+                <p class="text-start col-auto p-0 user-common-info">UX | UI designer<br>24 years old, Minsk</p>
+            </div>
+            <div class="col-auto d-none d-md-flex">
+                <div class="d-flex align-items-end language-links-container" tabindex="-1">
+                    <div id="language-links" class="d-flex m-2"><a class="nav-link" href="#">RU</a>
+                        <p class="nav-link-separator">|</p><a class="nav-link active" href="#">ENG</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="px-0" style="padding-top: 1.9rem;"><img class="col user-photo"
+                                                            src="{% static "portfolio/images/473d92de61764f572524ac59200c7086.jpg" %}"
+                                                            alt="Denis Novik"></div>
+    </div>
+</div>
+<div id="about-me" class="container-fluid p-0 background-f6f6f6">
+    <div class="container-fluid block">
+        <h2>About me</h2>
+        <p class="mx-auto" style="max-width: 30.333rem;">Hi, I'm Denis – UX/UI designer from Minsk.&nbsp;I'm interested
+            in design and everything connected with it.<br><br><br>I'm studying at courses "Web and mobile design&nbsp;interfaces"
+            in IT-Academy.<br><br><br>Ready to implement excellent projects with wonderful people.</p>
+    </div>
+</div>
+<div id="skills" class="container-fluid p-0">
+    <div class="container-fluid block">
+        <h2 class="mb-4 mb-md-5">Skills</h2>
+        <p>I work in such programs as</p>
+        <div class="d-flex flex-column flex-md-row align-items-center justify-content-between skills-block">
+            <div class="d-flex flex-column align-items-center skill"><img alt="Adobe Photoshop"
+                                                                          src="{% static "portfolio/images/photoshop-icon.svg" %}">
+                <p>Adobe<br>Photoshop</p>
+                <div class="justify-content-between d-flex align-self-stretch"><span class="star active"></span><span
+                        class="star active"></span><span class="star active"></span><span
+                        class="star active"></span><span class="star"></span></div>
+            </div>
+            <div class="d-flex flex-column align-items-center skill"><img alt="Adobe Illustrator"
+                                                                          src="{% static "portfolio/images/illustrator-icon.svg" %}">
+                <p>Adobe<br>Illustrator</p>
+                <div class="justify-content-between d-flex align-self-stretch"><span class="star active"></span><span
+                        class="star active"></span><span class="star active"></span><span class="star"></span><span
+                        class="star"></span></div>
+            </div>
+            <div class="d-flex flex-column align-items-center skill"><img alt="Adobe After Effects"
+                                                                          src="{% static "portfolio/images/aftereffects-icon.svg" %}">
+                <p>Adobe<br>After Effects</p>
+                <div class="justify-content-between d-flex align-self-stretch"><span class="star active"></span><span
+                        class="star active"></span><span class="star active"></span><span
+                        class="star active"></span><span class="star"></span></div>
+            </div>
+            <div class="d-flex flex-column align-items-center skill"><img alt="Figma"
+                                                                          src="{% static "portfolio/images/figma-icon.svg" %}">
+                <p>Figma</p>
+                <div class="justify-content-between d-flex align-self-stretch"><span class="star active"></span><span
+                        class="star active"></span><span class="star active"></span><span
+                        class="star active"></span><span class="star"></span></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="portfolio" class="container-fluid p-0 background-f6f6f6">
+    <div class="container-fluid d-flex flex-column block mb-4">
+        <h2 class="mb-5 mb-md-4 md">Portfolio</h2>
+        <div class="portfolio-item" style="margin: 2.5rem 0;"><img alt="Fashion store"
+                                                                   src="{% static "portfolio/images/fashion-store.png" %}"
+                                                                   style="object-fit: cover;width: 100%;margin-bottom: 2.5rem;">
+            <p>Online fashion store - Homepage</p>
+        </div>
+        <div class="portfolio-item" style="margin: 2.5rem 0;"><img alt="Reebok store"
+                                                                   src="{% static "portfolio/images/reebok.png" %}"
+                                                                   style="object-fit: cover;width: 100%;margin-bottom: 2.5rem;">
+            <p>Reebok Store - Concept</p>
+        </div>
+        <div class="portfolio-item" style="margin: 2.5rem 0;"><img alt="Braun Landing Page"
+                                                                   src="{% static "portfolio/images/braun.png" %}"
+                                                                   style="object-fit: cover;width: 100%;margin-bottom: 2.5rem;">
+            <p>Braun Landing Page - Concept</p>
+        </div>
+    </div>
+</div>
+<div id="contacts" class="container-fluid p-0 contacts">
+    <div class="container-fluid d-flex flex-column align-items-center block">
+        <h2 class="mb-4">Contacts</h2>
+        <p class="mb-4">Want to know more or just chat?&nbsp;<br>You are welcome!</p>
+        <button class="btn btn-dark rounded-pill align-self-stretch align-self-md-center" type="button">Send message
+        </button>
+        <div class="d-flex justify-content-between social-group">
+            <button class="social-button linkedin" type="button"></button>
+            <button class="social-button instagram" type="button"></button>
+            <button class="social-button behance" type="button"></button>
+            <button class="social-button dribble" type="button"></button>
+        </div>
+        <p class="social-p">Like me on<br>LinkedIn, Instagram, Behance, Dribble</p>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

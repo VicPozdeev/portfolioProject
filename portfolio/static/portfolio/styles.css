@@ -1,0 +1,260 @@
+body {
+  font-family: Gilroy, sans-serif;
+}
+
+.background-f6f6f6 {
+  background: #F6F6F6;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 2.125rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+p {
+  font-size: 1.125rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.btn {
+  font-size: 1.125rem;
+  font-family: Gilroy, sans-serif;
+  font-weight: 500;
+}
+
+.block {
+  max-width: 61.75rem;
+  padding-right: 1.625rem;
+  padding-left: 1.625rem;
+  margin-top: 6.5rem;
+  margin-bottom: 6.5rem;
+}
+
+.nav-border {
+  border-bottom: 1px solid rgb(82,82,82);
+  height: 1.5rem;
+}
+
+.nav-link {
+  --bs-nav-link-color: rgba(0, 0, 0, 0.55);
+  --bs-nav-link-hover-color: rgba(0, 0, 0, 0.7);
+  --bs-nav-link-disabled-color: rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+}
+
+.nav-link.active {
+  color: var(--bs-navbar-active-color);
+}
+
+.offcanvas-header {
+  padding: 2rem 2.1875rem;
+}
+
+.offcanvas .nav-link {
+  font-size: 1.125rem;
+}
+
+.offcanvas.show .nav-link, .offcanvas.showing .nav-link {
+  font-size: 2.125rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.nav-link-separator {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0 .25rem 1.25rem;
+  color: var(--bs-navbar-active-color);
+}
+
+.offcanvas .nav-link-separator {
+  font-size: 2.125rem;
+}
+
+.navbar-toggler {
+  border-style: none;
+  padding: .5rem 1.25rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0;
+  background: rgba(150,150,150,0.2);
+}
+
+.navbar-toggler:hover {
+  background: rgba(150,150,150,0.2);
+}
+
+.navbar-toggler-icon {
+  background: url("images/toggler-icon.svg");
+  width: 2.0625rem;
+  height: 1.24rem;
+  background-size: contain;
+}
+
+.btn-close:focus {
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.55);
+}
+
+.offcanvas .offcanvas-close-button {
+  width: 1.4375rem;
+  height: 1.4375rem;
+  background: url("images/btn-close.svg");
+  background-size: contain;
+  padding: 0;
+  margin: 0;
+}
+
+.language-links-container {
+  position: relative;
+  top: 1.25rem;
+  transform: rotate(270deg);
+}
+
+.offcanvas-language-links-container {
+  position: absolute;
+  bottom: 5rem;
+  right: -1.5rem;
+  transform: rotate(90deg);
+}
+
+.user-photo {
+  max-height: 100%;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .user-photo {
+    object-fit: cover;
+    object-position: 0 43%;
+    height: 24.1875rem;
+    width: 100%;
+  }
+}
+
+.skill {
+  width: 10.4rem;
+  margin: 2.5rem 0;
+}
+
+.skills-block {
+  padding: 1.875rem 0 3.125rem;
+}
+
+.skill p {
+  font-size: .875rem;
+  font-weight: bold;
+  color: #828282;
+  height: 5.2rem;
+  margin-top: 1.44rem;
+}
+
+.star {
+  background: url("images/star.svg") no-repeat;
+  width: 1.625rem;
+  height: 1.625rem;
+  background-size: contain;
+}
+
+.star.active {
+  background: url("images/star-active.svg") no-repeat;
+  width: 1.625rem;
+  height: 1.625rem;
+  background-size: contain;
+}
+
+.portfolio-item p {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .portfolio-item p {
+    text-decoration: initial;
+  }
+}
+
+.contacts .icon {
+  font-size: 3.2rem;
+}
+
+.social-group {
+  margin: 3rem 0;
+  width: 100%;
+  max-width: 22rem;
+}
+
+.social-button {
+  border-style: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+}
+
+.social-button:focus {
+  text-decoration: none;
+  outline: 0;
+  box-shadow: 0 0 0.5rem 0.25rem;
+  border: 0;
+  border-radius: .4rem;
+  color: rgba(150,150,150, 0.8);
+}
+
+.social-button.linkedin {
+  background: url("images/linkedin.svg") no-repeat;
+  background-size: contain;
+}
+
+.social-button.linkedin:focus {
+  border-radius: .4rem;
+}
+
+.social-button.instagram {
+  background: url("images/instagram.svg") no-repeat;
+  background-size: contain;
+}
+
+.social-button.instagram:focus {
+  border-radius: 0.8rem;
+}
+
+.social-button.behance {
+  background: url("images/behance.svg") no-repeat;
+  background-size: contain;
+}
+
+.social-button.behance:focus {
+  border-radius: .4rem;
+}
+
+.social-button.dribble {
+  background: url("images/dribble.svg") no-repeat;
+  background-size: contain;
+}
+
+.social-button.dribble:focus {
+  border-radius: 1.25rem;
+}
+
+.social-p {
+  font-size: 1.125rem;
+  color: #828282;
+}
+
+@media (min-width: 768px) {
+  .social-p {
+    font-size: .875rem;
+  }
+}
+
+.contacts .btn {
+  --bs-btn-bg: var(--bs-black);
+}
+
