@@ -1,0 +1,8 @@
+development:
+    DEBUG: True
+    ALLOWED_HOSTS:
+        - '*'
+production:
+    DEBUG: False
+    ALLOWED_HOSTS:
+        - '*'

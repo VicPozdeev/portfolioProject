@@ -11,17 +11,16 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
+# Quick-start development settings - unsuiable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = 'django-insecure-oqrq=)1mf8--l&+1!ux(sg_j8w&=t1d2zai_w$!s_=$u#923_m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -121,9 +120,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# HERE STARTS DYNACONF EXTENSION LOAD (Keep at the very bottom of settings.py)
+# Read more at https://www.dynaconf.com/django/
+import dynaconf  # noqa
+settings = dynaconf.DjangoDynaconf(__name__)  # noqa
+# HERE ENDS DYNACONF EXTENSION LOAD (No more code below this line)
+ 
