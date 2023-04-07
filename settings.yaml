@@ -5,4 +5,8 @@ development:
 production:
     DEBUG: False
     ALLOWED_HOSTS:
-        - 'vicpozdeev.ru'
+        - ''
+sprinthost:
+    DEBUG: False
+    ALLOWED_HOSTS:
+        - 'domain.ru'

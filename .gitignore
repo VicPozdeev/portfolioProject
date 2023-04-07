@@ -199,3 +199,6 @@ fabric.properties
 .idea
 # Ignore dynaconf secret files
 .secrets.*
+
+# Django local db SQLite
+db.sqlite3
