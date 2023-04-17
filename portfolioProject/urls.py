@@ -25,9 +25,9 @@ from wagtail.documents import urls as wagtaildocs_urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('cms/', include(wagtailadmin_urls)),
-    path('documents/', include(wagtaildocs_urls)),
-    path('pages/', include(wagtail_urls)),
-    path('', include('portfolio.urls'))
+    # path('documents/', include(wagtaildocs_urls)),
+    path('', include(wagtail_urls)),
+    # path('', include('portfolio.urls'))
 ]
 
 if settings.DEBUG:

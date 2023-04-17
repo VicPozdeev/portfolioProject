@@ -143,6 +143,11 @@ p {
 .skill {
   width: 10.4rem;
   margin: 2.5rem 0;
+  flex-basis: 25%;
+}
+
+.skill-item {
+  max-width: 8.125rem;
 }
 
 .skills-block {
@@ -171,6 +176,16 @@ p {
   background-size: contain;
 }
 
+.portfolio-item {
+  margin: 2.5rem 0;
+}
+
+.portfolio-item img{
+  object-fit: cover;
+  width: 100%;
+  margin-bottom: 2.5rem;
+}
+
 .portfolio-item p {
   text-decoration: underline;
 }
@@ -196,51 +211,7 @@ p {
   width: 2.5rem;
   height: 2.5rem;
   padding: 0;
-}
-
-.social-button:focus {
-  text-decoration: none;
-  outline: 0;
-  box-shadow: 0 0 0.5rem 0.25rem;
-  border: 0;
-  border-radius: .4rem;
-  color: rgba(150,150,150, 0.8);
-}
-
-.social-button.linkedin {
-  background: url("images/linkedin.svg") no-repeat;
   background-size: contain;
-}
-
-.social-button.linkedin:focus {
-  border-radius: .4rem;
-}
-
-.social-button.instagram {
-  background: url("images/instagram.svg") no-repeat;
-  background-size: contain;
-}
-
-.social-button.instagram:focus {
-  border-radius: 0.8rem;
-}
-
-.social-button.behance {
-  background: url("images/behance.svg") no-repeat;
-  background-size: contain;
-}
-
-.social-button.behance:focus {
-  border-radius: .4rem;
-}
-
-.social-button.dribble {
-  background: url("images/dribble.svg") no-repeat;
-  background-size: contain;
-}
-
-.social-button.dribble:focus {
-  border-radius: 1.25rem;
 }
 
 .social-p {
