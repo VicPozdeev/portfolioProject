@@ -197,8 +197,11 @@ fabric.properties
 
 # idea folder, uncomment if you don't need it
 .idea
-# Ignore dynaconf secret files
-.secrets.*
 
 # Django local db SQLite
 db.sqlite3
+
+# Docker dev build files
+.env.dev
+dev.Dockerfile
+docker-compose.dev.yml
