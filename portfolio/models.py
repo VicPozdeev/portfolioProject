@@ -102,6 +102,8 @@ class SocialAccount(Orderable):
 
 
 class PortfolioPage(Page):
+    parent_page_types = ['wagtailcore.Page']
+    subpage_types = []
     max_count = 1
 
     first_name = models.CharField(max_length=35, blank=True, null=True)
