@@ -1,0 +1,11 @@
+<option value="{{ widget.value|stringformat:'s' }}"
+data-url="{% if widget.value %}
+{{ widget.value.instance.url }}
+{% else %}
+------ Select social button ------   {% endif %}"{% include "django/forms/widgets/attrs.html" %}>
+{% if widget.value %}
+{{ widget.value.instance.name }}
+{% else %}
+{{ widget.label }}
+{% endif %}
+</option>

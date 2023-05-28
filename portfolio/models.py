@@ -1,10 +1,12 @@
-from django.db import models
 from django.core.validators import FileExtensionValidator
-
-from wagtail.models import Page, Orderable
-from wagtail.fields import RichTextField
-from wagtail.admin.panels import FieldPanel, InlinePanel, MultiFieldPanel, FieldRowPanel
+from django.db import models
+from django.utils.html import format_html
 from modelcluster.fields import ParentalKey
+from wagtail.admin.panels import FieldPanel, InlinePanel, MultiFieldPanel
+from wagtail.fields import RichTextField
+from wagtail.models import Page, Orderable
+
+from .widgets import SvgFileInput, AccountInput, SocialButtonSelect
 
 
 class Skill(Orderable):
@@ -32,6 +34,13 @@ class Skill(Orderable):
         FieldPanel('stars'),
     ]
 
+    def __str__(self):
+        return self.caption or str(self.figure)
+
+    class Meta:
+        verbose_name = "Skill"
+        verbose_name_plural = "Skills"
+
 
 class Work(Orderable):
     figure = models.ForeignKey(
@@ -54,6 +63,13 @@ class Work(Orderable):
         FieldPanel('caption'),
     ]
 
+    def __str__(self):
+        return self.caption or str(self.figure)
+
+    class Meta:
+        verbose_name = "Work"
+        verbose_name_plural = "Works"
+
 
 class SocialButton(Orderable):
     name = models.CharField(max_length=100, blank=True, null=True)
@@ -63,20 +79,33 @@ class SocialButton(Orderable):
                            blank=True,
                            null=True)
 
-    portfolio = ParentalKey(
-        'portfolio.PortfolioPage',
-        on_delete=models.CASCADE,
-        related_name='social_buttons',
-    )
-
     panels = [
         FieldPanel('name'),
         FieldPanel('url'),
-        FieldPanel('svg'),
+        FieldPanel('svg', widget=SvgFileInput),
     ]
 
     def __str__(self):
-        return f'{self.name}: {self.url}'
+        return f"{self.name}: {self.url}"
+
+    class Meta:
+        verbose_name = "Social button"
+        verbose_name_plural = "Social buttons"
+
+    def icon(self):
+        if self.svg:
+            return format_html(
+                '<span style="'
+                'background: url({}) no-repeat;'
+                'border-style: none;'
+                'width: 2.5rem;'
+                'height: 2.5rem;'
+                'padding: 0;'
+                'background-size: contain;'
+                'display: block;'
+                '"></span>',
+                self.svg.url
+            )
 
 
 class SocialAccount(Orderable):
@@ -94,11 +123,16 @@ class SocialAccount(Orderable):
     )
 
     panels = [
-        FieldRowPanel(
-            [FieldPanel('social_button'),
-             FieldPanel('account')]
-        )
+        FieldPanel('social_button', widget=SocialButtonSelect),
+        FieldPanel('account', widget=AccountInput)
     ]
+
+    def __str__(self):
+        return f"{self.social_button.name} - {self.social_button.url}{self.account}"
+
+    class Meta:
+        verbose_name = "Social button"
+        verbose_name_plural = "Social buttons"
 
 
 class PortfolioPage(Page):
@@ -151,9 +185,8 @@ class PortfolioPage(Page):
         ),
     ]
 
-    settings_panels = [
-        MultiFieldPanel(
-            [InlinePanel('social_buttons')],
-            heading='Social buttons'
-        ),
-    ]
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Portfolio page"

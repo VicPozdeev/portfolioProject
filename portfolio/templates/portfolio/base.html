@@ -14,7 +14,12 @@
             {% endif %}
         {% endblock %}
         {% block title_suffix %}
-            | Portfolio
+            {% if page.first_name %}
+                | {{ page.first_name }}
+                {% if page.last_name %}
+                    {{ page.last_name }}
+                {% endif %}
+            {% endif %}
         {% endblock %}
     </title>
     <meta name="description" content="{% if page.search_description %}{{ page.search_description }}{% endif %}">

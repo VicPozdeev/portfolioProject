@@ -1,0 +1,13 @@
+{% if widget.is_initial %}{{ widget.initial_text }}:
+    <div style="display: flex; align-items: end">
+        <a href="{{ widget.value.url }}"
+              style="background: url({{ widget.value.url }}) no-repeat;border-style: none;width: 2.5rem;height: 2.5rem;padding: 0;background-size: contain;display: block;"></a>
+        {% if not widget.required %}
+            <input style="margin-left: 1.5rem" type="checkbox" name="{{ widget.checkbox_name }}"
+                   id="{{ widget.checkbox_id }}" {% if widget.attrs.disabled %} disabled{% endif %}>
+            <label for="{{ widget.checkbox_id }}">{{ widget.clear_checkbox_label }}</label>
+        {% endif %}
+    </div>
+    <br>
+{{ widget.input_text }}:{% endif %}
+<input type="{{ widget.type }}" name="{{ widget.name }}">

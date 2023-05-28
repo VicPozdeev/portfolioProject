@@ -113,8 +113,8 @@
         <div class="d-flex justify-content-between social-group">
             {% for account in page.social_accounts.all %}
                 {% with account.social_button as button %}
-                    <a class="social-button" type="button" href="{{ button.url }}
-                        {% if account.account %}{{ account.account }}{% endif %}"
+                    <a class="social-button" type="button"
+                       href="{{ button.url }}{% if account.account %}{{ account.account }}{% endif %}"
                         style="background: url({{ button.svg.url }}) no-repeat;">
                     </a>
                 {% endwith %}

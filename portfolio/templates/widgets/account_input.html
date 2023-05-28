@@ -1,0 +1,57 @@
+{% load static %}
+<div style="display: flex">
+    <input type="{{ widget.type }}"
+           name="{{ widget.name }}"
+           style="width: auto;
+              padding-right: 0.2rem;
+              border-top-right-radius: 0;
+              border-bottom-right-radius: 0;
+              margin-right: -1px;
+              cursor: default"
+           id="{{ widget.attrs.id }}-url"
+    disabled>
+
+    <input type="{{ widget.type }}"
+           name="{{ widget.name }}"
+           style="width: auto;
+              padding-left: 0.1rem;
+              border-top-left-radius: 0;
+              border-bottom-left-radius: 0;
+              flex-grow: 1;"
+            {% if widget.value != None %}
+           value="{{ widget.value|stringformat:'s' }}"
+            {% endif %}{% include "django/forms/widgets/attrs.html" %}>
+</div>
+<script>
+    (function () {
+    const idString = "{{ widget.attrs.id }}";
+    const index = idString.split("-")[1];
+
+    const selectElement = document.getElementById(`id_social_accounts-${index}-social_button`);
+    const inputElement = document.getElementById(`id_social_accounts-${index}-account-url`);
+
+    inputElement.value = selectElement.options[selectElement.selectedIndex].getAttribute("data-url");
+
+    selectElement.addEventListener("change", function () {
+        inputElement.value = selectElement.options[selectElement.selectedIndex].getAttribute("data-url");
+        resizeInput.call(inputElement);
+    });
+
+    const input = inputElement;
+    input.addEventListener('input', resizeInput);
+    resizeInput.call(input);
+
+    function resizeInput() {
+        const canvas = document.createElement("canvas");
+        const context = canvas.getContext("2d");
+
+        context.font = window.getComputedStyle(this).getPropertyValue("font");
+        const paddingLeft = parseFloat(window.getComputedStyle(this).getPropertyValue("padding-left"));
+        const paddingRight = parseFloat(window.getComputedStyle(this).getPropertyValue("padding-right"));
+
+        const textWidth = context.measureText(this.value).width + paddingLeft + paddingRight + 2;
+
+        this.style.width = textWidth + "px";
+    }
+})();
+</script>
