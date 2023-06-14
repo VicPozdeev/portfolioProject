@@ -10,6 +10,10 @@ from .widgets import SvgFileInput, AccountInput, SocialButtonSelect
 
 
 class Skill(Orderable):
+    """
+    Represents a skill in the portfolio.
+    Skills are associated with specific applications or tools, and each skill is rated on a scale of 0 to 5.
+    """
     STARS_QUANTITY_CHOICES = [(i, str(i)) for i in range(0, 6)]
 
     figure = models.ForeignKey(
@@ -43,6 +47,9 @@ class Skill(Orderable):
 
 
 class Work(Orderable):
+    """
+    Represents a work in the portfolio.
+    """
     figure = models.ForeignKey(
         'wagtailimages.Image',
         blank=True,
@@ -72,6 +79,9 @@ class Work(Orderable):
 
 
 class SocialButton(Orderable):
+    """
+    Represents a social media button with a basic link.
+    """
     name = models.CharField(max_length=100, blank=True, null=True)
     url = models.URLField(blank=True, null=True)
     svg = models.FileField(upload_to='svg',
@@ -94,13 +104,13 @@ class SocialButton(Orderable):
 
     def icon(self):
         """
-                Returns the HTML code for displaying the icon of the social button.
+        Returns the HTML code for displaying the icon of the social button.
 
-                If the `svg` field is not empty, it generates the HTML code with the background image
-                specified by the `svg` file URL. Otherwise, it returns an empty string.
+        If the `svg` field is not empty, it generates the HTML code with the background image
+        specified by the `svg` file URL. Otherwise, it returns None.
 
-                Returns:
-                    str: The HTML code for the social button icon.
+        Returns:
+            str or None: The HTML code for the social button icon or None if `svg` is empty.
         """
         if self.svg:
             return format_html(
@@ -118,6 +128,10 @@ class SocialButton(Orderable):
 
 
 class SocialAccount(Orderable):
+    """
+    Represents a social media account associated with a specific social button.
+    """
+
     social_button = models.ForeignKey(
         SocialButton,
         on_delete=models.CASCADE,
