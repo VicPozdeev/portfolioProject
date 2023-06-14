@@ -120,17 +120,16 @@
                 {% endwith %}
             {% endfor %}
         </div>
+    {% if page.social_accounts.all %}
         <p class="social-p">
-        {% for account in page.social_accounts.all %}
-            {% with account.social_button as button %}
-                {% if forloop.first %}
-                    Like me on<br>{{ button.name }}
-                {% else %}
-                    , {{ button.name }}
-                {% endif %}
-            {% endwith %}
-        {% endfor %}
+            Like me on<br>
+            {% spaceless %}
+                {% for account in page.social_accounts.all %}
+                    {{ account.social_button.name }}{% if not forloop.last %},{% endif %}
+                {% endfor %}
+            {% endspaceless %}
         </p>
+    {% endif %}
     </div>
 </div>
 {% endblock content %}
