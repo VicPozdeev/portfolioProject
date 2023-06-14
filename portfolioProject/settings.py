@@ -153,8 +153,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 WAGTAIL_SITE_NAME = 'Portfolio'
 WAGTAILADMIN_BASE_URL = 'vicpozdeev.ru'
 
+# Set the secure proxy SSL header
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
+# Logging configuration
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,

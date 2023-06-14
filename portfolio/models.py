@@ -93,6 +93,15 @@ class SocialButton(Orderable):
         verbose_name_plural = "Social buttons"
 
     def icon(self):
+        """
+                Returns the HTML code for displaying the icon of the social button.
+
+                If the `svg` field is not empty, it generates the HTML code with the background image
+                specified by the `svg` file URL. Otherwise, it returns an empty string.
+
+                Returns:
+                    str: The HTML code for the social button icon.
+        """
         if self.svg:
             return format_html(
                 '<span style="'
